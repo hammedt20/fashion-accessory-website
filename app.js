@@ -2,7 +2,8 @@ const navMenu = document.querySelector(".nav-menu"),
     navToggle = document.querySelector('.nav-toggle'),
     navClose = document.querySelector('.nav-close'),
     navLink = document.querySelectorAll('.nav-link'),
-    header = document.querySelector('.header');
+    header = document.querySelector('.header'),
+    linkProducts = document.querySelectorAll('.products-item');
 
     navToggle.addEventListener('click', () => {
         navMenu.classList.add('show-menu');
@@ -23,3 +24,23 @@ const navMenu = document.querySelector(".nav-menu"),
             header.classList.remove('scroll-header');
         }
     })
+
+    let mixerProducts = mixitup(".product-content", {
+        selectors: {
+            target: '.products-card'
+        },
+        animation: {
+            duration: 300
+        }
+    });
+
+    mixerProducts.filter('.jewelry')
+
+    let activeProducts = function(){
+        linkProducts.forEach(l => {
+            l.classList.remove('active-product');
+        })
+        this.classList.add('active-product')
+    }
+
+    linkProducts.forEach(l => l.addEventListener('click', activeProducts))

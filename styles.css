@@ -97,7 +97,7 @@ button{
 }
 
 .section{
-    padding: 4.5rem 0 2rem;
+    padding: 4.5rem 0 ;
 }
 
 .section-title{
@@ -323,4 +323,262 @@ button{
 
 .specialty-group:hover .specialty-img{
     transform: translateY(-.25rem);
+}
+
+.products-filter{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2.5rem 2rem;
+    margin-bottom: 3.5rem;
+}
+
+.products-line{
+    position: relative;
+}
+
+.products-line::before{
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 40px;
+    background: var(--text-color);
+    right: 0;
+    top: 0;bottom: 0;
+    margin: auto 0;
+}
+
+.products-item{
+    cursor: pointer;
+}
+
+.products-title{
+    font-size: var(--h3-font-size);
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.products-stock{
+    font-size: var(--small-font-size);
+}
+
+.product-content{
+    grid-template-columns: 200px;
+    justify-content: center;
+}
+
+.products-card{
+    background: var(--coontainer-color);
+    border-radius: .5rem;
+}
+
+.products-img{
+    width: 150px;
+    transition: .4s linear;
+}
+
+.products-shape{
+    background: var(--card-color);
+    border-radius: .5rem .5rem 0 0;
+    text-align: center;
+    padding: .25rem 0;
+}
+
+.products-data{
+    padding: 1rem 0 1.25rem 1rem;
+    position: relative;
+}
+
+.products-price{
+    font-size: var(--h2-font-size);
+}
+
+.products-name{
+    font-size: var(--normal-font-size);
+}
+
+.products-button{
+    border-radius: 50%;
+    padding: .625rem;
+    display: inline-flex;
+    font-size: 1.25rem;
+    position: absolute;
+    right: 1rem;
+    top: -1.25rem;
+    box-shadow: 0 4px 12px hsla(206,4%,4%,.2);
+}
+
+.products-card:hover .products-img{
+    transform: translateY(-.25rem);
+}
+
+.active-product .products-title{
+    color: var(--title-color);
+}
+
+.quality{
+    background: #fff;
+}
+
+.quality-content{
+    row-gap: 2.5rem;
+}
+
+.quality-img{
+    position: relative;
+    justify-self: center;
+}
+
+.quality-img-big, .quality-img-small{
+    border-radius: .5rem;
+}
+
+.quality-img-big{
+    width: 280px;
+}
+
+.quality-img-small{
+    width: 100px;
+    /* height: 50%; */
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    transform: translateX(-5rem);
+}
+
+.quality-title, .quality-price{
+    font-size: var(--h1-font-size);
+}
+
+.quality-title{
+    margin-bottom: 0.75rem;
+}
+
+.quality-price{
+    margin-bottom: 0.25rem;
+}
+
+.quality-special{
+    display: block;
+    font-size: var(--small-font-size);
+    margin-bottom: 0.75rem;
+}
+
+.quality-description{
+    margin-bottom: 2.5rem;
+}
+
+.quality-buttons{
+    display: flex;
+    align-items: center;
+    column-gap: 2rem;
+}
+
+.quality-button{
+    font-size: var(--normal-font-size);
+    text-transform: uppercase;
+    color: var(--title-color);
+    display: inline-flex;
+    align-items: center;
+    column-gap: .75rem;
+}
+
+.quality-button i{
+    font-size: 1.25rem;
+    transition: .4s linear;
+}
+
+.quality-button:hover i {
+    transform: translateX(.25rem);
+}
+
+.logo{
+    background: #fff;
+}
+
+.logo-container{
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-content: center;
+    grid-gap: 2.5rem 2rem;
+    border-top: 1px solid var(--text-color);
+    padding-top: 2.5rem;
+}
+
+.logo-img{
+    width: 80px;
+    mix-blend-mode: luminosity;
+    opacity: .4;
+    transition: .4s;
+}
+
+.logo-img:hover{
+    opacity: .8;
+}
+
+.blog-container{
+    padding-bottom: 2rem;
+}
+
+.blog-content{
+    row-gap: 3rem;
+}
+
+.blog-image{
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.blog-img{
+    border-radius: .5rem;
+}
+
+.blog-button{
+    display: inline-flex;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: .5rem 0 .5rem 0;
+    font-size: 2rem;
+    color: var(--title-color);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.blog-button i{
+    transform: rotate(-30deg);
+    transition: .4s;
+}
+
+.blog-button:hover i{
+    transform:  translateX(.25rem);
+}
+
+.blog-title{
+    margin-bottom: 0.75rem;
+    font-size: var(--h2-font-size);
+}
+
+.blog-description{
+    margin-bottom: 1.5rem;
+}
+
+.blog-footer, .blog-reaction{
+    display: flex;
+    align-items: center;
+}
+
+.blog-footer{
+    column-gap: 2.5rem;
+}
+
+.blog-reaction{
+    column-gap: .25rem;
+}
+
+.blog-reaction i{
+    font-size: 1.25rem;
+}
+
+.blog-reaction span{
+    font-size: var(--small-font-size);
 }
