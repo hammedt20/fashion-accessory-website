@@ -3,7 +3,9 @@ const navMenu = document.querySelector(".nav-menu"),
     navClose = document.querySelector('.nav-close'),
     navLink = document.querySelectorAll('.nav-link'),
     header = document.querySelector('.header'),
-    linkProducts = document.querySelectorAll('.products-item');
+    linkProducts = document.querySelectorAll('.products-item'),
+    scrollUp = document.querySelector('.scroll-up'),
+    sections = document.querySelectorAll('section[id]');
 
     navToggle.addEventListener('click', () => {
         navMenu.classList.add('show-menu');
@@ -43,4 +45,30 @@ const navMenu = document.querySelector(".nav-menu"),
         this.classList.add('active-product')
     }
 
-    linkProducts.forEach(l => l.addEventListener('click', activeProducts))
+    linkProducts.forEach(l => l.addEventListener('click', activeProducts));
+
+    window.addEventListener('scroll', () => {
+        if(window.scrollY >= 350){
+            scrollUp.classList.add('show-scroll');
+        }else{
+            scrollUp.classList.remove('show-scroll');
+        }
+    })
+
+    function scrollActive(){
+        const scrollY = window.pageYOffset;
+
+        sections.forEach(sec => {
+            const sectionHeight = sec.offsetHeight,
+            sectionTop = sec.offsetTop -58,
+            sectionId = sec.getAttribute('id');
+
+            if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+                document.querySelector(`.nav-menu a[href = ${sectionId}]`).classList.add("active-link");
+            }else{
+                document.querySelector(`.nav-menu a[href = ${sectionId}]`).classList.remove("active-link");
+            }
+        })
+    }
+
+    window.addEventListener('scroll', scrollActive());
